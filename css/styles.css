@@ -1,61 +1,73 @@
 * {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-h2 {
-}
-
-p > span {
-    position: absolute;
-    color: red;
-    font-size: 100px;
-    right: 0;
-    top:-60px;
 }
 
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+}
+
+h2 > span {
+    color: rgb(243, 197, 14);
 }
 
 .hero {
-    display: flex;
-    flex-direction: column ;
-    justify-content: center;
-    align-items: start;
     background-image: url(../images/principalbaixo2.jpg);
     background-size: cover;
     background-position: center;
     height: 600px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 12px;
 }
 
+.hero p:first-child {
+    font-size: 4em;
+    font-weight: 900;
+    line-height: 40px;
+}
+
+.hero p:nth-child(2) {
+    font-size: 1.4em;
+}
+
 .about, .works {
+    padding-top: 24px;
     max-width: 1024px;
     margin: 0 auto;
 }
 
-.works > div{
+.about {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.grid {
     display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+    gap: 8px;
 }
 
-.works > div > div {
-    flex: 1 
+/* > selector - format only childs of .grid */
+.grid > div {
+    flex: 1;
 }
 
-.works img {
+.grid > div img {
     width: 100%;
-    height: 300px;
-    object-fit: cover;
 }
 
-@media screen and (max-width: 600px) {
-.works > div {
- flex-direction: column;   
-}
+@media screen and (max-width: 480px) {
+    .grid {
+        flex-direction: column;
+    }
+
+    .hero {
+        background-image: url(../images/principalalto2.jpg);
+    }
+    
 }
